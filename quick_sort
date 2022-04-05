@@ -1,0 +1,10 @@
+def quick_sort(number):
+    if len(number) <= 1:
+        return number
+    elem = number[0]
+    left = list(filter(lambda x: x > elem, number))
+    center = [i for i in number if i == elem]
+    right = list(filter(lambda x: x < elem, number))
+    return quick_sort(left) + center + quick_sort(right)
+    
+print(quick_sort([1, 2, 3, 4, 5]))
